@@ -5,53 +5,53 @@ function computerPlay() {
   let random = Math.floor(Math.random() * 3);
 
   if (random == 0) {
-    return "rock";
+    return "daş";
   } else if (random == 1) {
-    return "paper";
+    return "kağız";
   } else {
-    return "scissors";
+    return "qayçı";
   }
 }
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
-    result = "It's a tie!";
-    console.log("It's a tie!");
+    result = "Heç kim qalib olmadı!";
+    console.log("Heç kim qalib olmadı!");
     div.textContent = result;
     return result;
-  } else if (playerSelection == "rock") {
-    if (computerSelection == "scissors") {
-      result = "You win!";
-      console.log("You win!");
+  } else if (playerSelection == "daş") {
+    if (computerSelection == "qayçı") {
+      result = "Sən qazandın!";
+      console.log("Sən qazandın!");
       div.textContent = result;
       return result;
     } else {
-      result = "You lose!";
-      console.log("You lose!");
+      result = "Sən uduzdun!";
+      console.log("Sən uduzdun!");
       div.textContent = result;
       return result;
     }
-  } else if (playerSelection == "paper") {
-    if (computerSelection == "rock") {
-      result = "You win!";
-      console.log("You win!");
+  } else if (playerSelection == "kağız") {
+    if (computerSelection == "daş") {
+      result = "Sən qazandın!";
+      console.log("Sən qazandın!");
       div.textContent = result;
       return result;
     } else {
-      result = "You lose!";
-      console.log("You lose!");
+      result = "Sən uduzdun!";
+      console.log("Sən uduzdun!");
       div.textContent = result;
       return result;
     }
-  } else if (playerSelection == "scissors") {
-    if (computerSelection == "paper") {
-      result = "You win!";
-      console.log("You win!");
+  } else if (playerSelection == "qayçı") {
+    if (computerSelection == "kağız") {
+      result = "Sən qazandın!";
+      console.log("Sən qazandın!");
       div.textContent = result;
       return result;
     } else {
-      result = "You lose!";
-      console.log("You lose!");
+      result = "Sən uduzdun!";
+      console.log("Sən uduzdun!");
       div.textContent = result;
       return result;
     }
@@ -61,22 +61,22 @@ function playRound(playerSelection, computerSelection) {
 
 
 const btnRock = document.createElement("button");
-btnRock.addEventListener('click', () => playRound('rock', computerPlay()));
-btnRock.innerHTML = "Rock";
+btnRock.addEventListener('click', () => playRound('daş', computerPlay()));
+btnRock.innerHTML = "daş";
 btnRock.style.padding = "75px 75px";
 btnRock.style.margin = "10px";
 document.body.appendChild(btnRock);
 
 const btnPaper = document.createElement("button");
-btnPaper.addEventListener('click', () => playRound('paper', computerPlay()));
-btnPaper.innerHTML = "Paper";
+btnPaper.addEventListener('click', () => playRound('kağız', computerPlay()));
+btnPaper.innerHTML = "kağız";
 btnPaper.style.padding = "75px 75px";
 btnPaper.style.margin = "10px";
 document.body.appendChild(btnPaper);
 
 const btnScissors = document.createElement("button");
-btnScissors.addEventListener('click', () => playRound('scissors', computerPlay()));
-btnScissors.innerHTML = "Scissors";
+btnScissors.addEventListener('click', () => playRound('qayçı', computerPlay()));
+btnScissors.innerHTML = "qayçı";
 btnScissors.style.padding = "75px 75px";
 btnScissors.style.margin = "10px";
 document.body.appendChild(btnScissors);

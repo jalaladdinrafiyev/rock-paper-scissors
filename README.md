@@ -1,1 +1,1 @@
-# rock-paper-scissors
+# daş-kağız-qayçı
