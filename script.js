@@ -1,5 +1,5 @@
 let result = "";
-
+let color = "";
 
 function computerPlay() {
   let random = Math.floor(Math.random() * 3);
@@ -16,43 +16,43 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == computerSelection) {
     result = "Heç kim qalib olmadı!";
-    console.log("Heç kim qalib olmadı!");
     div.textContent = result;
+    changeColor("orange");
     return result;
   } else if (playerSelection == "daş") {
     if (computerSelection == "qayçı") {
       result = "Sən qazandın!";
-      console.log("Sən qazandın!");
       div.textContent = result;
+      changeColor("green");
       return result;
     } else {
       result = "Sən uduzdun!";
-      console.log("Sən uduzdun!");
       div.textContent = result;
+      changeColor("red");
       return result;
     }
   } else if (playerSelection == "kağız") {
     if (computerSelection == "daş") {
       result = "Sən qazandın!";
-      console.log("Sən qazandın!");
       div.textContent = result;
+      changeColor("green");
       return result;
     } else {
       result = "Sən uduzdun!";
-      console.log("Sən uduzdun!");
       div.textContent = result;
+      changeColor("red");
       return result;
     }
   } else if (playerSelection == "qayçı") {
     if (computerSelection == "kağız") {
       result = "Sən qazandın!";
-      console.log("Sən qazandın!");
       div.textContent = result;
+      changeColor("green");
       return result;
     } else {
       result = "Sən uduzdun!";
-      console.log("Sən uduzdun!");
       div.textContent = result;
+      changeColor("red");
       return result;
     }
   }
@@ -62,29 +62,23 @@ function playRound(playerSelection, computerSelection) {
 
 const btnRock = document.createElement("button");
 btnRock.addEventListener('click', () => playRound('daş', computerPlay()));
-btnRock.innerHTML = "daş";
-btnRock.style.padding = "75px 75px";
-btnRock.style.margin = "10px";
+btnRock.innerHTML = "✊";
 document.body.appendChild(btnRock);
 
 const btnPaper = document.createElement("button");
 btnPaper.addEventListener('click', () => playRound('kağız', computerPlay()));
-btnPaper.innerHTML = "kağız";
-btnPaper.style.padding = "75px 75px";
-btnPaper.style.margin = "10px";
+btnPaper.innerHTML = "✋";
 document.body.appendChild(btnPaper);
 
 const btnScissors = document.createElement("button");
 btnScissors.addEventListener('click', () => playRound('qayçı', computerPlay()));
-btnScissors.innerHTML = "qayçı";
-btnScissors.style.padding = "75px 75px";
-btnScissors.style.margin = "10px";
+btnScissors.innerHTML = "✌️";
 document.body.appendChild(btnScissors);
 
 const div = document.createElement("div");
-div.style.textAlign = "center";
-div.style.margin = "10px";
-div.style.border = "1px solid black";
-div.style.padding = "100px";
-div.style.width = "300px";
 document.body.appendChild(div);
+
+//change color of div to green when player wins, red when computer wins and yellow when it's a draw
+function changeColor(color) {
+  div.style.backgroundColor = color;
+}
